@@ -1,8 +1,4 @@
-loop = 1
-
-choice = 0
-
-while loop == 1:
+def menu():
     print "Welcome to the Calculator"
     print "Your options are as follows:"
     print " "
@@ -12,25 +8,33 @@ while loop == 1:
     print "4) Division"
     print "5) Quit Program"
     print " "
+    return input ("Choose your option: ")
     
-    choice = input("Choose your option: ")
+def add(a,b):
+    print a, "+", b, '=', a+b
+    
+def sub(a,b):
+    print a, "-", b, '=', a-b
+    
+def mul(a,b):
+    print a, "*", b, "=", a*b
+    
+def div(a,b):
+    print a, "/", b, "=", a/b 
+    
+loop = 1
+choice = 0
+while loop == 1:
+    choice = menu()
     if choice == 1:
-        add1 = input("Add this: ")
-        add2 = input("to this: ")
-        print add1, "+", add2, "=", add1 + add2
+        add(input("Add this: "), input("to this: "))
     elif choice == 2:
-        sub1 = input("Subtract this: ")
-        sub2 = input("from this: ")
-        print sub1, "-", sub2, "=", sub1 - sub2
+        sub(input("Subtract this: "), input("from this: "))
     elif choice == 3:
-        mul1 = input("Multiply this: ")
-        mul2 = input("to this: ")
-        print mul1, "*", mul2, "=", mul1 * mul2
+        mul(input("Multiply this: "), input("to this: "))
     elif choice == 4:
-        div1 = input("Divide this: ")
-        div2 = input("from this: ")
-        print div1, "/", div2, "=", div1 / div2
+        div(input("Divide this: "), input("from this: "))
     elif choice == 5:
         loop = 0
         
-print "Thank you for using the calculator."
+print "Thank you for using the Casey Calculator. Please enjoy your day."    
